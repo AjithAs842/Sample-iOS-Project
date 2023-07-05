@@ -12,9 +12,9 @@ struct Items {
 
 enum ItemsCellType: String {
     case search = "Serach"
-    case category = "Category"
-    case banner = "Banner"
-    case products = "Products"
+    case category = "category"
+    case banner = "banners"
+    case products = "products"
 }
 class DataVM {
     var isPullToRefresh = false
@@ -42,11 +42,9 @@ class DataVM {
         
         let urls = "https://run.mocky.io/v3/69ad3ec2-f663-453c-868b-513402e515f0"
         ApiResource().getAPIsWithoutToken(url: urls) { [self] (status, response, error, data) in
-            print("**\(String(describing: response))")
-            print("**\(String(describing: error))")
             self.dataModel = try? JSONDecoder().decode(Datas.self, from: data ?? Data())
             if let JSONString = String(data: data ?? Data(), encoding: String.Encoding.utf8) {
-                print("!!\(JSONString)")
+                print("\(JSONString)")
                 if status == 200 {
                     completion("0", "Success")
                 } else {
@@ -54,5 +52,11 @@ class DataVM {
                 }
             }
         }
+    }
+    func filterValuesByType(data: Datas, type: String) -> [Value] {
+        let filteredValues = data.homeData?
+            .first { $0.type == type }
+            .flatMap { $0.values }
+        return filteredValues ?? []
     }
 }

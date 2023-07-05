@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         if #available(iOS 13.0, *) {
         } else {
-            AppRouter.landOnSutableVC()
+            AppRouter.landingOnHomeVC()
         }
         return true
     }

@@ -1,15 +1,11 @@
-//
-//  ProductsCell.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
+
 
 import UIKit
 
 class ProductsCell: UITableViewCell{
     let vm = DataVM()
     var scrollDirection = TypeOfDirection.horizontal
+    var productValues: [Value] = []
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -21,19 +17,7 @@ class ProductsCell: UITableViewCell{
         if scrollDirection == .horizontal {
             createHorizontalLayout1()
         }
-     //   callApi()
     }
-//    func callApi() {
-//        vm.callEventListAPI { (success, Message) in
-//            if success {
-//                self.collectionView.reloadData()
-//                print("\(Message)")
-//            } else {
-//                print("\(Message)")
-//            }
-//        }
-//    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -46,10 +30,11 @@ extension ProductsCell: UICollectionViewDataSource, UICollectionViewDelegate {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return productValues.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.className, for: indexPath) as? ProductCollectionCell)!
+        cell.configureCell(img: productValues[indexPath.row].image ?? "", name: productValues[indexPath.row].name ?? "", actualPrice: productValues[indexPath.row].actualPrice ?? "", offerPrice: productValues[indexPath.row].offerPrice ?? "", offer: productValues[indexPath.row].offer ?? Int(), isExpress: productValues[indexPath.row].isExpress ?? Bool())
        
             return cell
     }

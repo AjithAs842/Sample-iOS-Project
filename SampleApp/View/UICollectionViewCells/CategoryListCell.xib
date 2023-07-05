@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -37,8 +36,8 @@
                                 <rect key="frame" x="48.666666666666671" y="0.0" width="180.66666666666663" height="180.66666666666666"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JW5-P4-kzh">
-                                        <rect key="frame" x="45.000000000000007" y="45.333333333333336" width="90.666666666666686" height="90.333333333333314"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <rect key="frame" x="31.666666666666664" y="31.666666666666679" width="117.33333333333334" height="117.33333333333331"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JW5-P4-kzh" secondAttribute="height" multiplier="1:1" id="dq7-lw-EBH"/>
                                         </constraints>
@@ -47,7 +46,7 @@
                                 <color key="backgroundColor" name="WhiteGrey"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vf1-oh-xtm" secondAttribute="height" multiplier="1:1" id="PmF-Ea-35C"/>
-                                    <constraint firstItem="JW5-P4-kzh" firstAttribute="width" secondItem="Vf1-oh-xtm" secondAttribute="width" multiplier="0.5" id="QYL-Dm-ydD"/>
+                                    <constraint firstItem="JW5-P4-kzh" firstAttribute="width" secondItem="Vf1-oh-xtm" secondAttribute="width" multiplier="0.65" id="QYL-Dm-ydD"/>
                                     <constraint firstItem="JW5-P4-kzh" firstAttribute="centerX" secondItem="Vf1-oh-xtm" secondAttribute="centerX" id="rqU-cU-hyD"/>
                                     <constraint firstItem="JW5-P4-kzh" firstAttribute="centerY" secondItem="Vf1-oh-xtm" secondAttribute="centerY" id="vT4-B0-KGB"/>
                                 </constraints>
@@ -110,8 +109,5 @@
         <namedColor name="WhiteGrey">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

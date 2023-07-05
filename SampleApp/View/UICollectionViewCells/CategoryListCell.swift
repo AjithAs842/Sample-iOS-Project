@@ -1,11 +1,6 @@
-//
-//  CategoryListCell.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
 
 import UIKit
+import SDWebImage
 
 class CategoryListCell: UICollectionViewCell {
 
@@ -17,7 +12,19 @@ class CategoryListCell: UICollectionViewCell {
         super.awakeFromNib()
         imgView.layer.cornerRadius = imgView.bounds.height / 5
         imgView.mask?.clipsToBounds = true
-        // Initialization code
+        
     }
-
+    func configureCell(img: String, title: String) {
+        imgCategory.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        self.imgCategory.sd_setImage(with: URL(string: img), placeholderImage: nil, options: .scaleDownLargeImages, context: nil, progress: .none) { (image, error, _, _) in
+            if error != nil {
+                self.imgCategory.image = UIImage(named: "")
+            } else {
+                self.imgCategory.image = image
+            }
+        }
+        titleLabel.text = title
+        imgView.backgroundColor = ColorSet.ColorArray.randomElement()
+        
+    }
 }

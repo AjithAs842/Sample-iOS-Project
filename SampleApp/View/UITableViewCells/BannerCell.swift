@@ -1,14 +1,10 @@
-//
-//  BannerCell.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
+
 
 import UIKit
 
 class BannerCell: UITableViewCell{
     let vm = DataVM()
+    var bannerImages: [Value] = []
     var scrollDirection = TypeOfDirection.horizontal
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,19 +17,7 @@ class BannerCell: UITableViewCell{
         if scrollDirection == .horizontal {
             createHorizontalLayout1()
         }
-     //   callApi()
     }
-//    func callApi() {
-//        vm.callEventListAPI { (success, Message) in
-//            if success {
-//                self.collectionView.reloadData()
-//                print("\(Message)")
-//            } else {
-//                print("\(Message)")
-//            }
-//        }
-//    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -46,11 +30,11 @@ extension BannerCell: UICollectionViewDataSource, UICollectionViewDelegate {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return bannerImages.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: BannerCollectionCell.className, for: indexPath) as? BannerCollectionCell)!
-       
+        cell.configureCell(img: bannerImages[indexPath.row].bannerURL ?? "")
             return cell
     }
 }

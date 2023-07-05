@@ -1,9 +1,4 @@
-//
-//  CollectionViewHorizontal.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
+
 
 import Foundation
 import Foundation

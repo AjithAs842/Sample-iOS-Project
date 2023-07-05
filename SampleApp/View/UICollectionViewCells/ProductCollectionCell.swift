@@ -1,17 +1,12 @@
-//
-//  ProductCollectionCell.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
+
 
 import UIKit
+import SDWebImage
 
 class ProductCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var viewContent: UIView!
     @IBOutlet weak var lblAdd: UILabel!
-    @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblItem: UILabel!
     @IBOutlet weak var lblAmount: UILabel!
     @IBOutlet weak var lblStrike: UILabel!
@@ -29,6 +24,43 @@ class ProductCollectionCell: UICollectionViewCell {
         self.lblAdd.layer.cornerRadius = 5
         self.lblAdd.mask?.clipsToBounds = true
         
+    }
+    func configureCell(img: String, name: String, actualPrice: String, offerPrice: String, offer: Int, isExpress: Bool) {
+        if isExpress {
+            imgDeliveryTruck.isHidden = true
+        } else {
+            imgDeliveryTruck.isHidden = false
+        }
+        lblStrike.text = actualPrice
+        
+        let attributedText = NSAttributedString(string: lblStrike.text ?? "")
+
+        // Apply the strikethrough style to the attributed string
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue
+        ]
+        let attributedString = NSAttributedString(string: lblStrike.text ?? "", attributes: attributes)
+
+        // Assign the attributed string to the label
+        lblStrike.attributedText = attributedString
+        lblItem.text = name
+        
+        itemImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        self.itemImage.sd_setImage(with: URL(string: img), placeholderImage: nil, options: .scaleDownLargeImages, context: nil, progress: .none) { (image, error, _, _) in
+            if error != nil {
+                self.itemImage.image = UIImage(named: "")
+            } else {
+                self.itemImage.image = image
+            }
+        }
+        if offer > 0 {
+            lblFlag.text = "\(offer)%OFF"
+        } else {
+            lblStrike.isHidden = true
+            lblFlag.isHidden = true
+            imgFlag.isHidden = true
+        }
+        lblAmount.text = offerPrice
     }
 
 }

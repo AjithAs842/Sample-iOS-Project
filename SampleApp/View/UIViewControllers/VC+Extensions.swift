@@ -1,9 +1,5 @@
-//
-//  VC+Extensions.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
+
+
 import Foundation
 import UIKit
 // MARK: - TableView Methods
@@ -35,18 +31,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         } else if item.itemType == ItemsCellType.category.rawValue{
             if let cell = tableView.dequeueReusableCell(withIdentifier: ItemListingCell.className, for: indexPath) as? ItemListingCell {
                 cell.selectionStyle = .none
+                cell.categoryViewData =  self.vm.filterValuesByType(data: self.vm.dataModel ?? Datas(), type: ItemsCellType.category.rawValue)
+                cell.collectionView.reloadData()
                 return cell
             }
             return UITableViewCell()
         } else if item.itemType == ItemsCellType.banner.rawValue{
             if let cell = tableView.dequeueReusableCell(withIdentifier: BannerCell.className, for: indexPath) as? BannerCell {
                 cell.selectionStyle = .none
+                cell.bannerImages =  self.vm.filterValuesByType(data: self.vm.dataModel ?? Datas(), type: ItemsCellType.banner.rawValue)
+                cell.collectionView.reloadData()
                 return cell
             }
             return UITableViewCell()
         } else if item.itemType == ItemsCellType.products.rawValue {
             if let cell = tableView.dequeueReusableCell(withIdentifier: ProductsCell.className, for: indexPath) as? ProductsCell {
                 cell.selectionStyle = .none
+                cell.productValues =  self.vm.filterValuesByType(data: self.vm.dataModel ?? Datas(), type: ItemsCellType.products.rawValue)
+                cell.collectionView.reloadData()
                 return cell
             }
             return UITableViewCell()

@@ -5,16 +5,16 @@ class ViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         self.setupUI()
-         tableView.reloadData()
+       //  tableView.reloadData()
     }
     
  
     // MARK: - Outlets
- 
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
     let vm = DataVM()
+    
     // MARK: - ViewController Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,7 +40,6 @@ class ViewController: UIViewController{
         tableView.register(nib3, forCellReuseIdentifier: ProductsCell.className)
         
         setupData()
-        tabBarController?.tabBar.isHidden = true
         tableView.separatorStyle = .none
      
     }
@@ -53,19 +52,16 @@ class ViewController: UIViewController{
                 if success == "0" {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
-                        self.tableView.restore()
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.showAlert(title: ErrorMessage.networkError, message: ErrorMessage.Apierror)
                         self.tableView.setEmptyMessage("NO DATA AVAILABLE....!")
-                        print(message)
                     }
                 }
             }
         } else {
             showAlert(title: ErrorMessage.networkError, message: ErrorMessage.noNetwork)
         }
-        //  ActivityLoader.shared.hide()
     }
 }

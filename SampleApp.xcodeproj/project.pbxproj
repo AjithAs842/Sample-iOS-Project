@@ -173,22 +173,18 @@
 		015708A82A55656A00EF782B /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				014C846D2A55B39600B26CDD /* Extensions */,
-				015708FA2A557BDB00EF782B /* Networks */,
+				015708F32A557B0A00EF782B /* Model */,
 				015708F52A557B2500EF782B /* ViewModel */,
 				015708F42A557B1900EF782B /* View */,
-				015708F32A557B0A00EF782B /* Model */,
-				015708A92A55656A00EF782B /* AppDelegate.swift */,
-				015708AB2A55656A00EF782B /* SceneDelegate.swift */,
-				015708AF2A55656A00EF782B /* Main.storyboard */,
+				014C846D2A55B39600B26CDD /* Extensions */,
+				015708FA2A557BDB00EF782B /* Networks */,
+				01FA2CEE2A55F60800AD85A9 /* SupportFiles */,
+				01FA2CEF2A55F61D00AD85A9 /* StoryBoard */,
+				01FA2CF02A55F63A00AD85A9 /* Constants */,
+				01FA2CF12A55F6B000AD85A9 /* CustomClasses */,
 				015708B22A55656B00EF782B /* Assets.xcassets */,
 				015708B42A55656B00EF782B /* LaunchScreen.storyboard */,
 				015708B72A55656B00EF782B /* Info.plist */,
-				014C84722A55B66A00B26CDD /* Constants.swift */,
-				014C847A2A55C07700B26CDD /* TabbarProvider.swift */,
-				014C84842A55C5E200B26CDD /* CollectionViewHorizontal.swift */,
-				014C84862A55C60F00B26CDD /* CollectionViewGridLayout.swift */,
-				014C84932A55E58A00B26CDD /* Approuter.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -284,6 +280,42 @@
 				015708F12A5576D700EF782B /* APIResource.swift */,
 			);
 			path = Networks;
+			sourceTree = "<group>";
+		};
+		01FA2CEE2A55F60800AD85A9 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				015708A92A55656A00EF782B /* AppDelegate.swift */,
+				015708AB2A55656A00EF782B /* SceneDelegate.swift */,
+				014C84932A55E58A00B26CDD /* Approuter.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		01FA2CEF2A55F61D00AD85A9 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				015708AF2A55656A00EF782B /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		01FA2CF02A55F63A00AD85A9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				014C84722A55B66A00B26CDD /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		01FA2CF12A55F6B000AD85A9 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				014C847A2A55C07700B26CDD /* TabbarProvider.swift */,
+				014C84842A55C5E200B26CDD /* CollectionViewHorizontal.swift */,
+				014C84862A55C60F00B26CDD /* CollectionViewGridLayout.swift */,
+			);
+			path = CustomClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

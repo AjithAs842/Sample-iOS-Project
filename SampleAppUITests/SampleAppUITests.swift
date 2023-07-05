@@ -1,9 +1,3 @@
-//
-//  SampleAppUITests.swift
-//  SampleAppUITests
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
 
 import XCTest
 

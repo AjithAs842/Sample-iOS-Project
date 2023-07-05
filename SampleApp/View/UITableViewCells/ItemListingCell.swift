@@ -1,15 +1,10 @@
-//
-//  ItemListingCell.swift
-//  SampleApp
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
 
 import UIKit
 
 class ItemListingCell: UITableViewCell {
     var scrollDirection = TypeOfDirection.horizontal
     let vm = DataVM()
+    var categoryViewData: [Value] = []
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,22 +16,7 @@ class ItemListingCell: UITableViewCell {
         if scrollDirection == .horizontal {
             createHorizontalLayout()
         }
-     //   callApi()
     }
-    func configureCell(itemImage: String, title: String) {
-        
-    }
-//    func callApi() {
-//        vm.callEventDetailAPI(id: SharedData.instance.getEventID()) { (success, message) in
-//            if success {
-//                print("***\(self.vm.eventDetails)")
-//                print("***\(self.vm.eventDetails.eventName ?? "")")
-//                self.collectionView.reloadData()
-//            } else {
-//                print(message)
-//            }
-//        }
-//    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -48,17 +28,17 @@ extension ItemListingCell: UICollectionViewDataSource, UICollectionViewDelegate,
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count = Int()
-        count = 10
+        count = categoryViewData.count
         return count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryListCell.className, for: indexPath) as? CategoryListCell {
-            print("$$$$\(vm.dataModel?.homeData?.count)")
-         //   cell.configureCell(image: vm.eventDetails.eventSponsors?[indexPath.row]?.sponsorLogo ?? "")
-            return cell
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryListCell.className, for: indexPath) as? CategoryListCell {
+                cell.configureCell(img: categoryViewData[indexPath.row].imageURL ?? "", title: categoryViewData[indexPath.row].name ?? "")
+                return cell
         }
         return UICollectionViewCell()
     }
+
 }
 extension ItemListingCell: CollectionViewDelegateHorizontalGridLayout {
     

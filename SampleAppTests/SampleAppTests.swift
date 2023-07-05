@@ -1,9 +1,3 @@
-//
-//  SampleAppTests.swift
-//  SampleAppTests
-//
-//  Created by Rony Sebastian on 05/07/23.
-//
 
 import XCTest
 @testable import SampleApp
