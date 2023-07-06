@@ -5,7 +5,6 @@ class ViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         self.setupUI()
-       //  tableView.reloadData()
     }
     
  
@@ -23,7 +22,6 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
          self.setupUI()
-   
     }
     // MARK: - Custom Methods
     func setupUI() {
@@ -38,7 +36,7 @@ class ViewController: UIViewController{
         tableView.register(nib2, forCellReuseIdentifier: BannerCell.className)
         let nib3 = UINib(nibName: ProductsCell.className, bundle: nil)
         tableView.register(nib3, forCellReuseIdentifier: ProductsCell.className)
-        
+        setupToHideKeyboardOnTapOnView()
         setupData()
         tableView.separatorStyle = .none
      

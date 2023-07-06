@@ -44,7 +44,6 @@ class DataVM {
         ApiResource().getAPIsWithoutToken(url: urls) { [self] (status, response, error, data) in
             self.dataModel = try? JSONDecoder().decode(Datas.self, from: data ?? Data())
             if let JSONString = String(data: data ?? Data(), encoding: String.Encoding.utf8) {
-                print("\(JSONString)")
                 if status == 200 {
                     completion("0", "Success")
                 } else {

@@ -21,7 +21,7 @@ class ProductCollectionCell: UICollectionViewCell {
         self.viewContent.layer.borderColor = UIColor.lightGray.cgColor
         self.viewContent.layer.cornerRadius = 5
         self.viewContent.mask?.clipsToBounds = true
-        self.lblAdd.layer.cornerRadius = 5
+        self.lblAdd.layer.cornerRadius = 10
         self.lblAdd.mask?.clipsToBounds = true
         
     }
@@ -34,14 +34,10 @@ class ProductCollectionCell: UICollectionViewCell {
         lblStrike.text = actualPrice
         
         let attributedText = NSAttributedString(string: lblStrike.text ?? "")
-
-        // Apply the strikethrough style to the attributed string
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue
         ]
         let attributedString = NSAttributedString(string: lblStrike.text ?? "", attributes: attributes)
-
-        // Assign the attributed string to the label
         lblStrike.attributedText = attributedString
         lblItem.text = name
         

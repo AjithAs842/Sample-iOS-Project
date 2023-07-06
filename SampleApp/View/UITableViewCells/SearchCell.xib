@@ -31,20 +31,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="7bY-S0-unO">
-                                        <rect key="frame" x="16.333333333333329" y="45.666666666666671" width="40" height="40.333333333333329"/>
+                                        <rect key="frame" x="16.333333333333329" y="49.666666666666671" width="32" height="32.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7bY-S0-unO" secondAttribute="height" multiplier="1:1" id="PZp-3M-sWw"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD7-hN-mGF">
-                                        <rect key="frame" x="56.333333333333336" y="0.0" width="16.333333333333336" height="131.66666666666666"/>
+                                        <rect key="frame" x="48.333333333333329" y="0.0" width="16.333333333333329" height="131.66666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doU-Di-4aA">
-                                        <rect key="frame" x="72.666666666666657" y="0.0" width="375.33333333333337" height="131.66666666666666"/>
+                                        <rect key="frame" x="64.666666666666657" y="0.0" width="375.33333333333337" height="131.66666666666666"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -56,7 +56,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode-scanner" translatesAutoresizingMaskIntoConstraints="NO" id="keu-kU-BhR">
-                                        <rect key="frame" x="480.33333333333331" y="45.666666666666671" width="39.999999999999943" height="40.333333333333329"/>
+                                        <rect key="frame" x="488.33333333333331" y="49.666666666666671" width="31.999999999999943" height="32.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="keu-kU-BhR" secondAttribute="height" multiplier="1:1" id="aGY-i7-vGJ"/>
@@ -82,7 +82,7 @@
                                     <constraint firstItem="doU-Di-4aA" firstAttribute="leading" secondItem="cD7-hN-mGF" secondAttribute="trailing" id="XoS-6p-CEd"/>
                                     <constraint firstItem="cD7-hN-mGF" firstAttribute="centerY" secondItem="aek-k9-VSJ" secondAttribute="centerY" id="b3c-mA-Ocf"/>
                                     <constraint firstAttribute="trailing" secondItem="eOG-I3-VNg" secondAttribute="trailing" id="cGg-Pi-hMT"/>
-                                    <constraint firstItem="7bY-S0-unO" firstAttribute="width" secondItem="aek-k9-VSJ" secondAttribute="width" multiplier="0.075" id="dLq-jK-pcE"/>
+                                    <constraint firstItem="7bY-S0-unO" firstAttribute="width" secondItem="aek-k9-VSJ" secondAttribute="width" multiplier="0.06" id="dLq-jK-pcE"/>
                                     <constraint firstItem="doU-Di-4aA" firstAttribute="height" secondItem="aek-k9-VSJ" secondAttribute="height" id="e2D-7l-W5s"/>
                                     <constraint firstItem="eOG-I3-VNg" firstAttribute="width" secondItem="cD7-hN-mGF" secondAttribute="width" id="geh-N2-i8W"/>
                                     <constraint firstItem="eOG-I3-VNg" firstAttribute="leading" secondItem="keu-kU-BhR" secondAttribute="trailing" id="mdE-xi-6k1"/>
